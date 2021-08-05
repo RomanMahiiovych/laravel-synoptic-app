@@ -11,7 +11,7 @@ class WeatherService
 
     /**
      * @param $cities
-     * @return array
+     * @return array|\Illuminate\Http\JsonResponse|object
      */
     public function handleWeatherShowing($cities)
     {
@@ -26,7 +26,7 @@ class WeatherService
             $weather[] = ($response) ? WeatherTransformer::make($response) : [];
         }
 
-        return $weather;
+        return response()->json($weather)->setStatusCode(200);
     }
 
     /**

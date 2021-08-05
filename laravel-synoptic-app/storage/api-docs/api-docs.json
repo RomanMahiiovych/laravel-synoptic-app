@@ -62,6 +62,12 @@
             }
         }
     },
+    "tags": [
+        {
+            "name": "Weather",
+            "description": "Weather data"
+        }
+    ],
     "security": [
         []
     ]

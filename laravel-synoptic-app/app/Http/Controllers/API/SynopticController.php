@@ -60,7 +60,7 @@ class SynopticController extends Controller
      * Get a data about current weather
      *
      * @param WeatherRequest $request
-     * @return array|int
+     * @return \Illuminate\Http\JsonResponse|int|object
      */
     public function index(WeatherRequest $request)
     {
@@ -71,7 +71,7 @@ class SynopticController extends Controller
             return response()->json()->getStatusCode();
         }
 
-        return $weather;
+        return response()->json($weather)->setStatusCode(200);
     }
 
 }
